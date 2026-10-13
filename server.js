@@ -5,7 +5,7 @@ const { DatabaseSync } = require('node:sqlite');
 const app = express();
 const port = 3000;
 // 프로젝트 폴더의 파일에 저장하므로 서버를 재시작해도 목록이 유지됩니다.
-const db = new DatabaseSync(path.join(__dirname, 'todos.db'));
+const db = new DatabaseSync(path.join('/tmp', 'todos.db'));
 db.exec(`
     CREATE TABLE IF NOT EXISTS todos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
